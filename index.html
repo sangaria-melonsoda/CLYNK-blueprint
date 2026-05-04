@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="CLYNK — K-셀럽을 위한 AI 광고 플랫폼. 한 번의 디지털 DNA 캡처로 광고 기회를 반복 수익으로 잇습니다." />
+<meta property="og:title" content="CLYNK — 지금의 이미지를, 다음의 기회로." />
+<meta property="og:description" content="K-셀럽 AI 광고 플랫폼. KDDC 디지털 자산 기반, 24시간 제작 착수, 16개 업종 독점 자동 보호." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="CLYNK — 지금의 이미지를, 다음의 기회로." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="og.png" />
+<title>CLYNK — 지금의 이미지를, 다음의 기회로.</title>
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><path fill='%23253ff6' d='M0,100c0,77.64,22.36,100,100,100s100-22.36,100-100S177.64,0,100,0,0,22.36,0,100Z'/><path fill='%23fdf7e7' d='M150.04,166.7c-18.31-.13-35.53-4.18-49.19-11.53-.53-.28-1.15-.28-1.68,0-13.67,7.34-30.88,11.4-49.19,11.53-.5,0-.91-.4-.91-.9v-20.86c0-.49.4-.89.89-.89,12.41-.08,22.38-1.93,30.33-4.86.28-.1.37-.45.18-.69-7.67-9.69-11.75-21.38-11.75-34.21,0-23.95,12.86-40.68,31.28-40.68s31.28,16.73,31.28,40.68c0,12.83-4.08,24.52-11.75,34.21-.19.23-.1.58.18.69,7.95,2.93,17.92,4.78,30.34,4.86.49,0,.89.4.89.89v20.86c0,.5-.41.91-.91.9ZM100,86.26c-6.33,0-8.62,10.78-8.62,18.03,0,6.2,2.21,14.22,8.27,21.42.18.22.53.22.71,0,6.06-7.2,8.27-15.21,8.27-21.42,0-7.25-2.3-18.03-8.62-18.03Z'/><rect fill='%23fdf7e7' x='39.81' y='42.44' width='36.41' height='22.68' rx='1' ry='1' transform='translate(55.02 -25.28) rotate(45)'/><rect fill='%23fdf7e7' x='123.77' y='42.44' width='36.41' height='22.68' rx='1' ry='1' transform='translate(280.4 -8.59) rotate(135)'/></svg>" />
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+
+<style>
+  /* ============ DESIGN TOKENS ============ */
+  :root {
+    --clynk-blue: #0100fe;
+    --clynk-blue-hover: #0200d4;
+    --clynk-blue-10: rgba(1, 0, 254, 0.10);
+    --clynk-blue-06: rgba(1, 0, 254, 0.06);
+    --clynk-blue-03: rgba(1, 0, 254, 0.03);
+    --clynk-green: #06ff89;
+    --clynk-green-hover: #00e87a;
+    --clynk-green-10: rgba(6, 255, 137, 0.15);
+    --clynk-green-text: #00a85a;
+    --clynk-green-text-d: #008a4b;
+
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f7;
+    --bg-tertiary: #ebebed;
+
+    --text-primary: #1d1d1f;
+    --text-secondary: rgba(0, 0, 0, 0.56);
+    --text-tertiary: rgba(0, 0, 0, 0.36);
+
+    --border: rgba(0, 0, 0, 0.08);
+    --border-strong: rgba(0, 0, 0, 0.16);
+
+    --warning: #ff9f0a;
+    --error: #ff3b30;
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
+    --radius-2xl: 28px;
+    --radius-pill: 999px;
+
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-12: 48px;
+    --space-16: 64px;
+    --space-20: 80px;
+    --space-24: 96px;
+
+    --font-ko: 'Pretendard', -apple-system, 'SF Pro Text', 'Apple SD Gothic Neo', sans-serif;
+
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    --max-w: 1120px;
+
+    --shadow-1: 0 2px 12px rgba(0,0,0,0.04);
+    --shadow-2: 0 4px 20px rgba(0,0,0,0.06);
+    --shadow-3: 0 8px 32px rgba(0,0,0,0.08);
+  }
+
+  /* ============ RESET ============ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--font-ko);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    letter-spacing: 0;
+    word-break: keep-all;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+  }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+  a { color: inherit; text-decoration: none; }
+  img, svg { display: block; max-width: 100%; }
+  ul { list-style: none; }
+  table { border-collapse: collapse; width: 100%; }
+
+  /* ============ TYPOGRAPHY ============ */
+  .h-display {
+    font-size: clamp(40px, 6vw, 80px);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+  .h-section {
+    font-size: clamp(30px, 3.6vw, 48px);
+    line-height: 1.18;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+  .h-sub {
+    font-size: clamp(22px, 2.2vw, 28px);
+    line-height: 1.28;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+  .h-card {
+    font-size: clamp(18px, 1.4vw, 22px);
+    line-height: 1.32;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+  .body-lg {
+    font-size: clamp(17px, 1.3vw, 19px);
+    line-height: 1.65;
+    font-weight: 400;
+    color: var(--text-secondary);
+  }
+  .body {
+    font-size: clamp(15px, 1.1vw, 16px);
+    line-height: 1.65;
+    font-weight: 400;
+    color: var(--text-secondary);
+  }
+  .body-sm {
+    font-size: clamp(13px, 0.95vw, 14px);
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+  .caption {
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--text-tertiary);
+  }
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: var(--space-6);
+  }
+  .eyebrow .dot {
+    width: 6px;
+    height: 6px;
+    background: var(--clynk-blue);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  strong { font-weight: 700; color: var(--text-primary); }
+
+  /* ============ LAYOUT ============ */
+  .container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 48px);
+  }
+  section { padding: clamp(80px, 10vw, 140px) 0; }
+  section.bg-soft { background: var(--bg-secondary); }
+  .section-header { max-width: 760px; margin-bottom: clamp(48px, 6vw, 80px); }
+  .section-header .body-lg { margin-top: var(--space-6); }
+
+  /* ============ HEADER ============ */
+  .topbar {
+    position: sticky;
+    top: 0;
+    height: 64px;
+    padding: 0 clamp(16px, 4vw, 48px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    z-index: 100;
+  }
+  .topbar .brand { display: flex; align-items: center; gap: 10px; }
+  .topbar .brand .mark { width: 28px; height: 28px; }
+  .topbar .brand .word { height: 16px; width: auto; }
+  .nav {
+    display: flex;
+    gap: clamp(16px, 2.5vw, 32px);
+    align-items: center;
+  }
+  .nav a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color 0.15s var(--ease);
+    padding: 6px 0;
+    position: relative;
+  }
+  .nav a:hover { color: var(--text-primary); }
+  .nav a.active { color: var(--clynk-blue); font-weight: 600; }
+  .nav a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background: var(--clynk-blue);
+    border-radius: 2px;
+  }
+  @media (max-width: 920px) {
+    .nav { display: none; }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: var(--radius-md);
+    transition: background 0.2s var(--ease), transform 0.1s var(--ease), box-shadow 0.2s var(--ease);
+    cursor: pointer;
+    line-height: 1;
+  }
+  .btn-primary {
+    background: var(--clynk-blue);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--clynk-blue-hover); }
+  .btn-primary:active { transform: scale(0.98); }
+  .btn-primary svg { width: 14px; height: 14px; }
+  .btn-secondary {
+    background: transparent;
+    color: var(--clynk-blue);
+    border: 1.5px solid var(--clynk-blue);
+    padding: 8.5px 18px;
+  }
+  .btn-secondary:hover { background: var(--clynk-blue-06); }
+  .btn-lg {
+    font-size: 16px;
+    padding: 16px 32px;
+    border-radius: var(--radius-md);
+  }
+  .btn-lg svg { width: 16px; height: 16px; }
+
+  /* ============ BADGES ============ */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .badge-blue { background: var(--clynk-blue-10); color: var(--clynk-blue); }
+  .badge-green { background: rgba(6,255,137,0.20); color: var(--clynk-green-text-d); }
+  .badge-warn { background: rgba(255,159,10,0.15); color: #b86e00; }
+  .badge-neutral { background: var(--bg-tertiary); color: var(--text-secondary); }
+
+  /* ============ HERO ============ */
+  .hero {
+    padding: clamp(72px, 12vw, 140px) 0 clamp(80px, 10vw, 120px);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 90% 10%, rgba(6,255,137,0.08), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 10% 90%, rgba(1,0,254,0.05), transparent 60%);
+    pointer-events: none;
+  }
+  .hero .container { position: relative; z-index: 1; }
+  .hero-mark {
+    width: clamp(64px, 8vw, 96px);
+    height: clamp(64px, 8vw, 96px);
+    margin-bottom: var(--space-8);
+  }
+  .hero-headline {
+    margin-bottom: var(--space-6);
+    max-width: 16ch;
+  }
+  .hero-sub {
+    max-width: 56ch;
+    margin-bottom: var(--space-12);
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; }
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+    margin-top: var(--space-12);
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--border);
+    align-items: center;
+  }
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .hero-meta-item .dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--clynk-green);
+    box-shadow: 0 0 0 3px var(--clynk-green-10);
+  }
+
+  /* ============ STATS GRID ============ */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 2vw, 28px);
+  }
+  @media (max-width: 720px) { .stats-grid { grid-template-columns: 1fr; } }
+  .stat {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: clamp(24px, 3vw, 36px);
+  }
+  .stat .num {
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1;
+    font-weight: 700;
+    color: var(--clynk-blue);
+    margin-bottom: var(--space-3);
+    font-feature-settings: 'tnum';
+  }
+  .stat .label {
+    font-size: clamp(14px, 1vw, 16px);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+  .stat .note {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ============ RISK SPLIT ============ */
+  .risk-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(16px, 2.5vw, 32px);
+  }
+  @media (max-width: 720px) { .risk-split { grid-template-columns: 1fr; } }
+  .risk-col {
+    border-radius: var(--radius-lg);
+    padding: clamp(24px, 3vw, 36px);
+  }
+  .risk-col.danger {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+  }
+  .risk-col.opportunity {
+    background: var(--bg-primary);
+    border: 1.5px solid var(--clynk-blue);
+    position: relative;
+    overflow: hidden;
+  }
+  .risk-col.opportunity::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--clynk-blue);
+  }
+  .risk-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin-bottom: var(--space-4);
+  }
+  .risk-tag.danger { color: var(--text-tertiary); }
+  .risk-tag.opportunity { color: var(--clynk-blue); }
+  .risk-title {
+    font-size: clamp(20px, 1.8vw, 24px);
+    font-weight: 700;
+    margin-bottom: var(--space-6);
+  }
+  .risk-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .risk-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: clamp(14px, 1.05vw, 15px);
+    line-height: 1.55;
+  }
+  .risk-list .mark {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .risk-list.danger .mark { background: var(--bg-tertiary); color: var(--text-tertiary); }
+  .risk-list.danger li { color: var(--text-secondary); }
+  .risk-list.opportunity .mark { background: var(--clynk-green-10); color: var(--clynk-green-text-d); }
+  .risk-list.opportunity li { color: var(--text-primary); }
+
+  /* ============ SOLUTION CARDS ============ */
+  .sol-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 2vw, 24px);
+  }
+  @media (max-width: 880px) { .sol-grid { grid-template-columns: 1fr; } }
+  .sol-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: clamp(28px, 3vw, 36px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  }
+  .sol-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-3);
+  }
+  .sol-card.ai {
+    border: 1px solid rgba(6,255,137,0.30);
+    background: var(--bg-primary);
+  }
+  .sol-num {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: var(--clynk-blue);
+  }
+  .sol-card.ai .sol-num { color: var(--clynk-green-text-d); }
+  .sol-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: var(--clynk-blue-10);
+    color: var(--clynk-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sol-card.ai .sol-icon { background: var(--clynk-green-10); color: var(--clynk-green-text-d); }
+  .sol-icon svg { width: 22px; height: 22px; }
+  .sol-card .body { color: var(--text-secondary); }
+  .sol-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: var(--space-2);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border);
+  }
+  .sol-points li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .sol-points li::before {
+    content: '·';
+    color: var(--clynk-blue);
+    font-weight: 700;
+  }
+
+  /* ============ DNA STEPS (expandable accordion) ============ */
+  .dna-steps {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: 800px;
+  }
+  .dna-step {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: box-shadow 0.2s var(--ease), border-color 0.2s var(--ease);
+  }
+  .dna-step:hover { border-color: var(--border-strong); }
+  .dna-step:has(details[open]) {
+    box-shadow: var(--shadow-2);
+    border-color: var(--clynk-blue-10);
+  }
+  .dna-step details summary {
+    padding: clamp(20px, 2.5vw, 28px);
+    display: grid;
+    grid-template-columns: 44px 1fr 18px;
+    gap: clamp(16px, 2vw, 24px);
+    align-items: start;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    transition: background 0.15s var(--ease);
+  }
+  .dna-step details summary::-webkit-details-marker { display: none; }
+  .dna-step details summary:hover { background: var(--clynk-blue-03); }
+  .dna-step details[open] summary { background: transparent; }
+
+  .dna-step .num-bubble {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--clynk-blue-10);
+    color: var(--clynk-blue);
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-feature-settings: 'tnum';
+    flex-shrink: 0;
+    transition: background 0.2s var(--ease), color 0.2s var(--ease);
+  }
+  .dna-step details[open] .num-bubble {
+    background: var(--clynk-blue);
+    color: #fff;
+  }
+
+  .dna-step summary h4 { font-size: clamp(16px, 1.3vw, 18px); font-weight: 700; margin-bottom: 6px; }
+  .dna-step summary p { font-size: clamp(14px, 1vw, 15px); color: var(--text-secondary); line-height: 1.6; margin-bottom: 0; }
+  .dna-step summary .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: var(--space-3);
+  }
+
+  .dna-step .chevron {
+    width: 18px;
+    height: 18px;
+    margin-top: 14px;
+    color: var(--text-tertiary);
+    transition: transform 0.25s var(--ease), color 0.2s var(--ease);
+    flex-shrink: 0;
+  }
+  .dna-step details summary:hover .chevron { color: var(--clynk-blue); }
+  .dna-step details[open] .chevron {
+    transform: rotate(180deg);
+    color: var(--clynk-blue);
+  }
+
+  .dna-detail {
+    padding: 0 clamp(20px, 2.5vw, 28px) clamp(20px, 2.5vw, 28px);
+  }
+  .dna-detail-inner {
+    margin-left: 60px;
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--border);
+  }
+  @media (max-width: 600px) { .dna-detail-inner { margin-left: 0; } }
+  .dna-detail h5 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin: var(--space-6) 0 var(--space-2);
+  }
+  .dna-detail h5:first-child { margin-top: 0; }
+  .dna-detail p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-3);
+  }
+  .dna-detail ul, .dna-detail ol {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-3);
+    padding-left: 20px;
+  }
+  .dna-detail li {
+    margin-bottom: 6px;
+  }
+  .dna-detail strong { color: var(--text-primary); font-weight: 600; }
+  .dna-detail em { font-style: normal; color: var(--clynk-blue); font-weight: 500; }
+
+  /* ============ SAFETY GRID ============ */
+  .safety-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(12px, 1.5vw, 20px);
+  }
+  @media (max-width: 880px) { .safety-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .safety-grid { grid-template-columns: 1fr; } }
+  .safety-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: clamp(20px, 2.2vw, 28px);
+  }
+  .safety-card .icon {
+    width: 36px; height: 36px;
+    border-radius: var(--radius-md);
+    background: var(--clynk-blue-10);
+    color: var(--clynk-blue);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: var(--space-4);
+  }
+  .safety-card .icon svg { width: 18px; height: 18px; }
+  .safety-card h4 { font-size: 16px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+  .safety-card p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* ============ INDUSTRY LIST ============ */
+  .industry-grid {
+    margin-top: var(--space-12);
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: clamp(24px, 3vw, 36px);
+  }
+  .industry-grid h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+  }
+  .industry-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px 16px;
+  }
+  @media (max-width: 720px) { .industry-list { grid-template-columns: repeat(2, 1fr); } }
+  .industry-list li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .industry-list li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--clynk-blue);
+    flex-shrink: 0;
+  }
+
+  /* ============ NOT-COVERED LIST ============ */
+  .not-covered {
+    margin-top: var(--space-8);
+    padding: var(--space-6);
+    background: rgba(255, 159, 10, 0.06);
+    border: 1px solid rgba(255, 159, 10, 0.20);
+    border-radius: var(--radius-md);
+  }
+  .not-covered h4 { font-size: 13px; font-weight: 700; color: #8a4500; margin-bottom: var(--space-3); }
+  .not-covered ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    list-style: none;
+  }
+  .not-covered li { font-size: 12.5px; color: #8a4500; }
+
+  /* ============ PRICING TABLES ============ */
+  .pricing-set {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(16px, 2.5vw, 32px);
+  }
+  @media (max-width: 720px) { .pricing-set { grid-template-columns: 1fr; } }
+  .pricing-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: clamp(24px, 3vw, 32px);
+  }
+  .pricing-card h4 {
+    font-size: clamp(18px, 1.5vw, 20px);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .pricing-card .pricing-note {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+  }
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .pricing-table th, .pricing-table td {
+    padding: 12px 8px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .pricing-table th {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    background: transparent;
+    padding-top: 0;
+  }
+  .pricing-table td.num {
+    text-align: right;
+    font-feature-settings: 'tnum';
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .pricing-table td.dim { color: var(--text-secondary); font-weight: 400; }
+  .pricing-table tr.highlight td { background: var(--clynk-blue-06); font-weight: 700; }
+  .pricing-table tr.highlight td.dim { color: var(--clynk-blue); }
+  .pricing-table tr:last-child td { border-bottom: none; }
+
+  /* ============ TIER TABLE ============ */
+  .tier-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 2vw, 24px);
+    margin-top: var(--space-12);
+  }
+  @media (max-width: 720px) { .tier-grid { grid-template-columns: 1fr; } }
+  .tier-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+  .tier-card h5 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .tier-card .premium {
+    font-size: clamp(24px, 2.4vw, 32px);
+    font-weight: 700;
+    color: var(--clynk-blue);
+    margin: 8px 0 var(--space-4);
+    font-feature-settings: 'tnum';
+  }
+  .tier-card .examples {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ============ AI PACKAGE TABLE ============ */
+  .ai-table {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-top: var(--space-8);
+  }
+  .ai-table table { width: 100%; }
+  .ai-table th {
+    text-align: left;
+    padding: 16px 20px;
+    background: var(--bg-secondary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+  .ai-table td {
+    padding: 18px 20px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .ai-table tr:last-child td { border-bottom: none; }
+  .ai-table tr.featured td { background: rgba(6,255,137,0.04); }
+  .ai-table .pkg-name { font-weight: 700; font-size: 15px; }
+  .ai-table .pkg-price {
+    font-weight: 700;
+    color: var(--text-primary);
+    font-feature-settings: 'tnum';
+    white-space: nowrap;
+  }
+  .ai-table .pkg-time { color: var(--text-secondary); white-space: nowrap; }
+  .ai-table .pkg-fee { color: var(--clynk-green-text-d); font-weight: 600; white-space: nowrap; font-feature-settings: 'tnum'; }
+  @media (max-width: 720px) {
+    .ai-table th, .ai-table td { padding: 12px 14px; font-size: 13px; }
+    .ai-table th:nth-child(3), .ai-table td:nth-child(3) { display: none; }
+  }
+
+  /* ============ COMPARISON ============ */
+  .compare-table {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .compare-table table { width: 100%; }
+  .compare-table th {
+    padding: 18px 20px;
+    background: var(--bg-secondary);
+    font-size: 13px;
+    font-weight: 700;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .compare-table th.is-clynk { color: var(--clynk-blue); }
+  .compare-table td {
+    padding: 18px 20px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .compare-table td:first-child {
+    font-weight: 600;
+    color: var(--text-primary);
+    width: 22%;
+  }
+  .compare-table td.is-clynk {
+    color: var(--text-primary);
+    background: var(--clynk-blue-03);
+  }
+  .compare-table tr:last-child td { border-bottom: none; }
+  @media (max-width: 720px) {
+    .compare-table th, .compare-table td { padding: 12px 14px; font-size: 13px; }
+  }
+
+  /* ============ TIMELINE ============ */
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 11px;
+    width: 2px;
+    background: var(--border);
+  }
+  .timeline-step {
+    position: relative;
+    padding-bottom: var(--space-8);
+  }
+  .timeline-step:last-child { padding-bottom: 0; }
+  .timeline-step::before {
+    content: '';
+    position: absolute;
+    left: -28px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 3px solid var(--clynk-blue);
+  }
+  .timeline-step.complete::before { background: var(--clynk-blue); }
+  .timeline-step h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .timeline-step h4 .badge { font-weight: 600; }
+  .timeline-step p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* ============ FAQ ============ */
+  .faq-list { display: flex; flex-direction: column; gap: var(--space-3); }
+  .faq-item {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  .faq-item summary {
+    padding: var(--space-6);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    user-select: none;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231d1d1f' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.2s var(--ease);
+    flex-shrink: 0;
+  }
+  .faq-item[open] summary::after { transform: rotate(180deg); }
+  .faq-item .faq-body {
+    padding: 0 var(--space-6) var(--space-6);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  .faq-item .faq-body strong { color: var(--text-primary); }
+
+  /* ============ FINAL CTA ============ */
+  .final-cta {
+    text-align: center;
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 20%, rgba(1,0,254,0.05), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 70% 80%, rgba(6,255,137,0.07), transparent 60%);
+    pointer-events: none;
+  }
+  .final-cta .container { position: relative; z-index: 1; }
+  .final-cta-mark {
+    width: 64px; height: 64px;
+    margin: 0 auto var(--space-8);
+  }
+  .final-cta h2 { max-width: 18ch; margin: 0 auto var(--space-6); }
+  .final-cta .body-lg { max-width: 44ch; margin: 0 auto var(--space-12); }
+  .final-cta-actions { display: flex; flex-direction: column; align-items: center; gap: var(--space-4); }
+  .final-cta-meta { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text-secondary); margin-top: var(--space-4); }
+  .final-cta-meta .dot { width: 6px; height: 6px; background: var(--clynk-green); border-radius: 50%; box-shadow: 0 0 0 3px var(--clynk-green-10); }
+
+  /* ============ FOOTER ============ */
+  footer {
+    border-top: 1px solid var(--border);
+    background: var(--bg-secondary);
+    padding: var(--space-16) 0 var(--space-12);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--space-12);
+    margin-bottom: var(--space-12);
+  }
+  @media (max-width: 720px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-8); } }
+  .footer-brand .word { height: 18px; width: auto; margin-bottom: var(--space-4); }
+  .footer-brand p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; max-width: 32ch; }
+  .footer-col h5 { font-size: 12px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; color: var(--text-secondary); margin-bottom: var(--space-3); }
+  .footer-col ul { display: flex; flex-direction: column; gap: 8px; }
+  .footer-col a { font-size: 13px; color: var(--text-primary); }
+  .footer-col a:hover { color: var(--clynk-blue); }
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: var(--space-6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    color: var(--text-tertiary);
+  }
+
+  /* ============ FOCUS STATES ============ */
+  *:focus-visible { outline: 2px solid var(--clynk-blue); outline-offset: 2px; border-radius: 4px; }
+  .btn:focus-visible { outline-offset: 3px; }
+
+  /* ============ REDUCED MOTION ============ */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  }
+
+  /* ============ PRINT ============ */
+  @media print {
+    .topbar { position: static; border: 0; background: #fff; backdrop-filter: none; }
+    .nav, .btn { display: none; }
+    section { page-break-inside: avoid; padding: 24px 0; }
+    .hero { padding: 24px 0; }
+    body { background: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ SVG SPRITES (logos) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="logo-mark" viewBox="0 0 200 200">
+      <path fill="#0100fe" d="M0,100c0,77.64,22.36,100,100,100s100-22.36,100-100S177.64,0,100,0,0,22.36,0,100Z"/>
+      <path fill="#fdf7e7" d="M150.04,166.7c-18.31-.13-35.53-4.18-49.19-11.53-.53-.28-1.15-.28-1.68,0-13.67,7.34-30.88,11.4-49.19,11.53-.5,0-.91-.4-.91-.9v-20.86c0-.49.4-.89.89-.89,12.41-.08,22.38-1.93,30.33-4.86.28-.1.37-.45.18-.69-7.67-9.69-11.75-21.38-11.75-34.21,0-23.95,12.86-40.68,31.28-40.68s31.28,16.73,31.28,40.68c0,12.83-4.08,24.52-11.75,34.21-.19.23-.1.58.18.69,7.95,2.93,17.92,4.78,30.34,4.86.49,0,.89.4.89.89v20.86c0,.5-.41.91-.91.9ZM100,86.26c-6.33,0-8.62,10.78-8.62,18.03,0,6.2,2.21,14.22,8.27,21.42.18.22.53.22.71,0,6.06-7.2,8.27-15.21,8.27-21.42,0-7.25-2.3-18.03-8.62-18.03Z"/>
+      <rect fill="#fdf7e7" x="39.81" y="42.44" width="36.41" height="22.68" rx="1" ry="1" transform="translate(55.02 -25.28) rotate(45)"/>
+      <rect fill="#fdf7e7" x="123.77" y="42.44" width="36.41" height="22.68" rx="1" ry="1" transform="translate(280.4 -8.59) rotate(135)"/>
+    </symbol>
+    <symbol id="logo-word" viewBox="0 0 626.23 151.41">
+      <path fill="#0100fe" d="M454.35,3.95v91.51h-1.27L390.29,3.95h-26.95v120.21h-36.21c-14.65,0-26.31-2.18-35.5-5.67,8.84-10.93,13.54-24.17,13.54-38.74,0-26.75-14.36-45.44-34.93-45.44s-34.93,18.69-34.93,45.44c0,14.57,4.7,27.81,13.54,38.74-8.12,3.09-18.18,5.15-30.52,5.58h-41.19V3.96h-30.66v145.5h66.87c9.05,0,17.85-.85,26.2-2.51,11.27-2.23,21.69-5.9,30.69-10.88,15.66,8.66,35.64,13.39,56.89,13.39h66.87V57.96h1.27l63.18,91.5h26.57V3.95h-30.67ZM270.24,104.13c-7.06-8.16-9.63-17.32-9.63-24.38,0-8.1,2.56-20.14,9.63-20.14s9.63,12.04,9.63,20.14c0,7.06-2.57,16.22-9.63,24.38Z"/>
+      <path fill="#0100fe" d="M67.77,151.41c-12.89,0-24.45-2.93-34.67-8.79-10.22-5.86-18.29-14.36-24.22-25.49C2.96,106,0,92.56,0,76.8s2.98-29.41,8.94-40.58c5.96-11.17,14.06-19.66,24.32-25.49,10.25-5.83,21.76-8.74,34.52-8.74,8.46,0,16.31,1.19,23.54,3.56,7.23,2.38,13.62,5.83,19.19,10.35,5.57,4.53,10.11,10.06,13.62,16.6s5.76,14.01,6.74,22.41h-31.05c-.59-3.97-1.74-7.55-3.47-10.74-1.73-3.19-3.97-5.89-6.74-8.11-2.77-2.21-5.92-3.92-9.47-5.13-3.55-1.2-7.44-1.81-11.67-1.81-7.42,0-13.95,1.87-19.58,5.62-5.63,3.74-9.99,9.15-13.09,16.21-3.09,7.06-4.64,15.67-4.64,25.83s1.56,19.06,4.69,26.12c3.12,7.06,7.49,12.39,13.09,15.97,5.6,3.58,12.08,5.37,19.43,5.37,4.1,0,7.91-.55,11.43-1.66,3.52-1.11,6.64-2.7,9.38-4.79,2.73-2.08,5.03-4.64,6.88-7.67s3.11-6.49,3.76-10.4h31.05c-.78,6.71-2.75,13.15-5.91,19.34-3.16,6.19-7.44,11.7-12.84,16.55-5.4,4.85-11.82,8.69-19.24,11.52s-15.79,4.25-25.1,4.25Z"/>
+      <path fill="#0100fe" d="M503.77,149.46V3.95h30.66v64.16h1.95L588.73,3.95h36.82l-53.91,65.14,54.59,80.37h-36.82l-39.84-59.77-15.14,18.46v41.31h-30.66Z"/>
+      <rect fill="#0100fe" x="203.03" y="10.67" width="40.67" height="25.33" transform="translate(81.92 -151.11) rotate(45)"/>
+      <rect fill="#0100fe" x="296.79" y="10.67" width="40.67" height="25.33" transform="translate(557.87 -184.41) rotate(135)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ HEADER ============ -->
+<header class="topbar">
+  <a href="#top" class="brand" aria-label="CLYNK 홈">
+    <svg class="mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+    <svg class="word" viewBox="0 0 626.23 151.41" aria-hidden="true"><use href="#logo-word"/></svg>
+  </a>
+  <nav class="nav" aria-label="섹션 이동">
+    <a href="#shift">변화</a>
+    <a href="#solution">CLYNK</a>
+    <a href="#dna">시작</a>
+    <a href="#safety">안전</a>
+    <a href="#revenue">수익</a>
+    <a href="#flow">흐름</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a class="btn btn-primary" href="#start">
+    KDDC 문의하기
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container">
+    <svg class="hero-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+    <h1 class="h-display hero-headline">지금의 이미지를,<br/>다음의 기회로.</h1>
+    <p class="body-lg hero-sub">
+      CLYNK는 K-셀럽의 디지털 자산을 매개로, 한 번의 준비를 반복되는 광고 기회와 정산 가능한 구조로 잇는 플랫폼입니다.
+      광고 연결, 계약, 검수, 정산까지 하나의 흐름. 소속사·연예인은 중요한 순간만 직접 결정합니다.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary btn-lg" href="#start">
+        KDDC 문의하기
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a class="btn btn-secondary btn-lg" href="#solution">CLYNK가 무엇인지 보기</a>
+    </div>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><span class="dot"></span>KDDC 디지털 데이터 100%</div>
+      <div class="hero-meta-item"><span class="dot"></span>24시간 내 제작 착수</div>
+      <div class="hero-meta-item"><span class="dot"></span>16개 업종 독점 자동 보호</div>
+      <div class="hero-meta-item"><span class="dot"></span>매월 정산</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 1: THE SHIFT ============ -->
+<section id="shift" class="bg-soft">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow"><span class="dot"></span>01. 변화</span>
+      <h2 class="h-section">광고가 바뀌고 있습니다.<br/><span style="color: var(--text-secondary);">더 짧게, 더 자주, 더 많이.</span></h2>
+      <p class="body-lg">
+        브랜드는 한 편의 큰 광고가 아니라, 매주 새로운 소재를 원합니다.
+        매번 촬영하고 편집하는 방식으로는 따라갈 수 없습니다. 광고는 더 분화되었고,
+        한 번 만든 자산을 어떻게 반복적으로 활용하는지가 새 기준이 됐습니다.
+      </p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="num">30~100개</div>
+        <div class="label">캠페인당 필요 소재 수</div>
+        <div class="note">한 편의 메인 영상에서 시작해 숏폼·세로·정사각·배너로 분화. 매체별 소재가 폭발적으로 늘어났습니다.</div>
+      </div>
+      <div class="stat">
+        <div class="num">9:16</div>
+        <div class="label">새로운 기본 포맷</div>
+        <div class="note">릴스·틱톡·쇼츠·스토리. 가로 16:9가 아닌 세로 9:16이 표준이 됐습니다. 가로 광고를 세로로 변환하는 비용이 새로 발생합니다.</div>
+      </div>
+      <div class="stat">
+        <div class="num">월 단위</div>
+        <div class="label">캠페인 주기</div>
+        <div class="note">연 1~2회의 큰 캠페인 → 월 단위 시즌 캠페인. 모델은 일정·이미지를 더 자주 잠겨야 합니다.</div>
+      </div>
+    </div>
+
+    <p class="caption" style="margin-top: var(--space-8); opacity: 0.8;">광고 제작·집행 트렌드 산업 관찰 기준</p>
+  </div>
+</section>
+
+<!-- ============ SECTION 2: THE RISK ============ -->
+<section id="risk">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow"><span class="dot"></span>02. 갈림길</span>
+      <h2 class="h-section">준비하지 않으면, AI가 당신의 기회를 가져갑니다.</h2>
+      <p class="body-lg">
+        AI 광고 시장은 이미 시작됐습니다. 지금까지의 작업 방식으로는 이 속도를 따라갈 수 없습니다.
+        하지만 같은 변화가, 준비된 사람에게는 새로운 수익 채널이 됩니다.
+      </p>
+    </div>
+
+    <div class="risk-split">
+      <div class="risk-col danger">
+        <div class="risk-tag danger">준비하지 않으면</div>
+        <div class="risk-title" style="color: var(--text-secondary);">잃는 것</div>
+        <ul class="risk-list danger">
+          <li><span class="mark">✕</span><span><strong>AI가 만든 광고가 내 기회를 가져갑니다.</strong> 가상 모델·생성 이미지가 빠르고 저렴하게 광고 시장을 채웁니다.</span></li>
+          <li><span class="mark">✕</span><span><strong>매체별 소재 경쟁에서 밀려납니다.</strong> 캠페인당 30~100개 소재 요구 → 촬영 기반으로는 단가·속도 모두 불리.</span></li>
+          <li><span class="mark">✕</span><span><strong>이미지가 어디 쓰이는지 통제 못 합니다.</strong> 딥페이크·무단 사용·합성 광고에 사후 대응만 가능.</span></li>
+          <li><span class="mark">✕</span><span><strong>한 번 받은 광고는 한 번으로 끝.</strong> 다음 광고는 처음부터 다시 — 모델·소속사 모두 매번 같은 부담.</span></li>
+          <li><span class="mark">✕</span><span><strong>새 광고주와의 연결을 놓칩니다.</strong> 발견·검토·계약 흐름이 흩어져 있어 기회의 크기·다양성 모두 줄어듭니다.</span></li>
+        </ul>
+      </div>
+      <div class="risk-col opportunity">
+        <div class="risk-tag opportunity">지금 준비하면</div>
+        <div class="risk-title">얻는 것</div>
+        <ul class="risk-list opportunity">
+          <li><span class="mark">✓</span><span><strong>초상권이 반복 수익 구조가 됩니다.</strong> 한 번의 디지털 DNA 캡처 → 다수의 광고주·다수의 캠페인에서 활용 → 매월 정산.</span></li>
+          <li><span class="mark">✓</span><span><strong>촬영 없이도 광고 기회가 계속 열립니다.</strong> AI 제작 파이프라인이 필요한 소재를 24시간 내 만들어 냅니다.</span></li>
+          <li><span class="mark">✓</span><span><strong>이미지를 명시적으로 통제합니다.</strong> 금지 업종 사전 차단 + 모든 광고 양측 승인 필수 + 자동 만료.</span></li>
+          <li><span class="mark">✓</span><span><strong>업종 독점으로 경쟁사 사용을 막습니다.</strong> 16개 업종 대분류 기준, 계약 즉시 자동 발동.</span></li>
+          <li><span class="mark">✓</span><span><strong>새 광고주를 CLYNK가 매칭합니다.</strong> 적합도·예산·업종 가용성 기반 추천 → 협의 단계가 단축됩니다.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 3: WHAT IS CLYNK ============ -->
+<section id="solution" class="bg-soft">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow"><span class="dot"></span>03. CLYNK</span>
+      <h2 class="h-section">한 번의 준비, 반복되는 기회.</h2>
+      <p class="body-lg">
+        CLYNK는 광고 에이전시·대행사·제작사 역할을 하나의 플랫폼으로 통합합니다.
+        K-셀럽의 디지털 자산(KDDC DB)을 사전 확보하여 양측 컨펌 즉시 AI 제작에 착수하고,
+        16개 업종 대분류 기준 독점을 자동 보호합니다. 모델은 결정만 합니다 — 나머지 흐름은 CLYNK가 잇습니다.
+      </p>
+    </div>
+
+    <div class="sol-grid">
+      <div class="sol-card">
+        <div class="sol-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+        </div>
+        <div class="sol-num">01 / 디지털 자산</div>
+        <h3 class="h-card">KDDC DB 100% 보유</h3>
+        <p class="body">
+          KDDC와 독점 파트너십. CLYNK 등록 모델 전원의 3D 스캔·음성·초상권 데이터를 사전 확보합니다.
+          별도 촬영·소속사 재협의 없이 광고 제작이 시작됩니다.
+        </p>
+        <ul class="sol-points">
+          <li>3D 상반신·얼굴 스캔 데이터 (Esper LightCage)</li>
+          <li>음성 합성용 보이스 샘플</li>
+          <li>표정·상반신 포즈 라이브러리</li>
+          <li>법적 사용 동의서 사전 확보</li>
+        </ul>
+      </div>
+
+      <div class="sol-card ai">
+        <div class="sol-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="sol-num">02 / AI 제작</div>
+        <span class="badge badge-green" style="align-self: flex-start;">AI POWERED</span>
+        <h3 class="h-card">24시간 내 제작 착수</h3>
+        <p class="body">
+          광고주·모델 양측 컨펌 즉시 Arkain AI Tool 기반 제작 시작. 별도 촬영·일정 조율 불필요.
+          이미지·15초·30초·60초 영상까지 한 패키지로 납품됩니다.
+        </p>
+        <ul class="sol-points">
+          <li>Quick (3~4일) → Premium (10일)</li>
+          <li>이미지·영상·가로·세로 풀세트</li>
+          <li>패키지별 수정 횟수 보장</li>
+        </ul>
+      </div>
+
+      <div class="sol-card">
+        <div class="sol-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="sol-num">03 / 통제·보호</div>
+        <h3 class="h-card">업종 독점 + 6단계 안전 장치</h3>
+        <p class="body">
+          계약 즉시 16개 업종 대분류 기준 독점 자동 발동. 경쟁사가 동일 업종에 같은 모델을 사용할 수 없습니다.
+          금지 업종·사전 승인·기획안 검토·품질 검수·계약 범위 명시·자동 만료까지 6단계.
+        </p>
+        <ul class="sol-points">
+          <li>독점 즉시 발동 / 만료 자동 해제</li>
+          <li>3영업일 내 분쟁 판정 체계</li>
+          <li>모든 광고 양측 승인 필수</li>
+          <li>금지 업종 사전 차단</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 4: DIGITAL DNA PROCESS ============ -->
+<section id="dna">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow"><span class="dot"></span>04. Digital DNA</span>
+      <h2 class="h-section">한 번의 세션, 무한한 확장.</h2>
+      <p class="body-lg">
+        Digital DNA 촬영은 한 번이면 됩니다. KDDC 점에서 약 90분의 세션으로 광고 활용의 기준을 만듭니다.
+        그 이후의 광고는 모두 AI로 무한 확장. 모델은 다시 촬영장에 가지 않아도 됩니다.
+      </p>
+    </div>
+
+    <p class="caption" style="margin-bottom: var(--space-6); color: var(--text-tertiary);">각 단계를 클릭하면 상세 내용을 볼 수 있습니다.</p>
+
+    <ol class="dna-steps">
+      <!-- STEP 1 -->
+      <li class="dna-step">
+        <details>
+          <summary>
+            <div class="num-bubble">1</div>
+            <div>
+              <h4>KDDC 점 방문 · 1회 세션 (약 90분)</h4>
+              <p>서울 KDDC 점에 방문. 본인 인증, 동의서 작성, 세션 진행. 사전 제공된 촬영 가이드에 따라 준비된 헤어·메이크업·의상으로 촬영.</p>
+              <div class="meta-row">
+                <span class="badge badge-neutral">평일 가능</span>
+                <span class="badge badge-neutral">소속사 동행 가능</span>
+              </div>
+            </div>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="dna-detail">
+            <div class="dna-detail-inner">
+              <h5>진행 흐름 (총 약 90분)</h5>
+              <ul>
+                <li>도착, 본인 확인 (신분증)</li>
+                <li>동의서 검토·서명, 사용 범위 안내</li>
+                <li>메인 세션 (스캔·음성·영상 캡처)</li>
+                <li>결과 확인, 추가 보완 여부 결정</li>
+              </ul>
+
+              <h5>준비물</h5>
+              <p>신분증, 본인 명의 휴대폰. 그 외 모든 장비·세팅·메이크업·헤어·기본 의상은 CLYNK가 표준으로 제공합니다. 본인 트레이드마크 룩이 있다면 추가로 가져오셔도 됩니다.</p>
+
+              <h5>동행</h5>
+              <p>소속사 매니저 또는 법정대리인 동행 가능. 별도 대기 공간 제공. <strong>미성년자는 부모 또는 법정대리인 동의서 + 동행이 필수입니다.</strong></p>
+
+              <h5>재방문</h5>
+              <p>외형 큰 변화 (체형·헤어 스타일·시술 등) 발생 시 계약 기간 내 <em>재촬영 1회 무료</em>. 광고 결과물의 일관성 유지가 목적입니다.</p>
+            </div>
+          </div>
+        </details>
+      </li>
+
+      <!-- STEP 2 -->
+      <li class="dna-step">
+        <details>
+          <summary>
+            <div class="num-bubble">2</div>
+            <div>
+              <h4>3D 스캔 · 음성 · 짧은 영상 캡처</h4>
+              <p>Esper LightCage 기반 상반신·얼굴 3D 스캔, 다양한 표정·각도 사진, 음성 샘플(5분 내외 스크립트), 짧은 동작 영상까지. AI 합성에 필요한 디지털 자산 한 세트를 한 번에 확보합니다. (하반신은 AI 합성 단계에서 자유롭게 생성 가능합니다.)</p>
+              <div class="meta-row">
+                <span class="badge badge-blue">Esper LightCage</span>
+                <span class="badge badge-blue">상반신·얼굴 스캔</span>
+                <span class="badge badge-blue">음성 샘플</span>
+                <span class="badge badge-blue">표정 라이브러리</span>
+              </div>
+            </div>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="dna-detail">
+            <div class="dna-detail-inner">
+              <h5>장비</h5>
+              <p><strong>Esper LightCage (스몰 사이즈)</strong> — 측지 돔 프레임에 다중 카메라와 156개의 MultiFlash 조명을 배치한 photogrammetry 캡처 리그. 상반신·얼굴 360도를 동시에 캡처해 고해상도 3D 메시·텍스처를 한 번에 생성합니다. 하반신은 AI 합성 단계에서 자유롭게 생성되므로 별도 스캔이 필요하지 않습니다.</p>
+
+              <h5>캡처 항목</h5>
+              <ul>
+                <li><strong>상반신·얼굴 3D 스캔</strong> — Esper LightCage로 360도 메시 + 얼굴·헤어 고해상도 텍스처 (~15분)</li>
+                <li><strong>표정 라이브러리</strong> — 자연·웃음·진지·집중·놀람 등 12종 (~10분)</li>
+                <li><strong>상반신 포즈 라이브러리</strong> — 정면·측면·각도별 상체 포즈 등 8종 (~5분)</li>
+                <li><strong>음성 샘플</strong> — 약 5분 분량 표준 스크립트 + 다양한 톤 변형 (~10분)</li>
+                <li><strong>짧은 영상</strong> — 자연스러운 상반신 동작 5~10초 클립 다수 (~10분)</li>
+              </ul>
+
+              <h5>의상</h5>
+              <p>기본 캐주얼·정장 상의 2종 + 본인 트레이드마크 룩 1종까지 가능. 의상 변경은 1회 허용 (시간 단축을 위함). 하반신·전신 의상, 광고별 의상 합성은 모두 AI 단계에서 처리.</p>
+
+              <h5>데이터 처리·보안</h5>
+              <p>원본 데이터는 캡처 즉시 <strong>KDDC 내부 전용 DAS</strong>에 저장되며, 외부 네트워크와 분리된 오프라인 환경에서 보호됩니다.
+              어떤 원본도 온라인 클라우드에 업로드되지 않고, <strong>승인된 내부 권한자만 제한적으로 접근</strong>할 수 있습니다.
+              KDDC는 폐쇄형 보안 체계 안에서 원본을 엄격히 관리합니다.</p>
+            </div>
+          </div>
+        </details>
+      </li>
+
+      <!-- STEP 3 -->
+      <li class="dna-step">
+        <details>
+          <summary>
+            <div class="num-bubble">3</div>
+            <div>
+              <h4>프로필 등록 · 선호·금지 업종 설정</h4>
+              <p>CLYNK 모델 프로필 등록. 광고하고 싶은 업종 (선호 5개), 절대 광고하지 않을 업종 (제외) 명시. 이 설정은 광고주 검색 시 자동으로 필터링되어, 원하지 않는 제안은 처음부터 들어오지 않습니다.</p>
+            </div>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="dna-detail">
+            <div class="dna-detail-inner">
+              <h5>등록 항목</h5>
+              <ul>
+                <li><strong>활동명·대표 작품·수상 이력</strong> — 광고주 검색 결과에 노출</li>
+                <li><strong>이미지 키워드</strong> — 톤·분위기 (예: 신뢰감·청량·세련) — AI 매칭 정확도 향상에 사용</li>
+                <li><strong>가격 티어</strong> — 신인·신예 / 중견급 / 톱 (소속사와 협의 후 결정)</li>
+                <li><strong>일정 가용성</strong> — 월 단위 가용/불가 마킹 (선택, 미설정 시 항상 가용)</li>
+              </ul>
+
+              <h5>업종 설정</h5>
+              <p><strong>선호 업종 (최대 5개):</strong> 16개 대분류 중 선택. 검색 결과 우선 노출.<br/>
+              <strong>금지 업종 (무제한):</strong> 해당 업종 광고주는 검색·제안 단계에서 모델을 발견할 수 없습니다.
+              <em>제안 자체가 도착하지 않으므로 매번 거절할 필요 없음.</em></p>
+
+              <h5>변경·관리</h5>
+              <p>모든 설정은 언제든 수정 가능. 변경 즉시 매칭 룰에 반영됩니다.
+              <strong>소속사 담당자가 모델을 대신해서 작성·관리도 가능합니다.</strong></p>
+
+              <h5>소요 시간</h5>
+              <p>일반적으로 <strong>30분 내</strong> 완료. KDDC 세션 종료 후 1주일 내 등록을 권장합니다.</p>
+            </div>
+          </div>
+        </details>
+      </li>
+
+      <!-- STEP 4 -->
+      <li class="dna-step">
+        <details>
+          <summary>
+            <div class="num-bubble">4</div>
+            <div>
+              <h4>광고주 매칭 · 제안 · 양측 승인</h4>
+              <p>광고주가 CLYNK에서 모델을 검색·제안. 모델·소속사 양측 승인 후 계약 성립. 기획안 단계에서 한 번 더 검토 권한이 있어, 이미지에 맞지 않는 광고는 시작 단계에서 멈출 수 있습니다.</p>
+            </div>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="dna-detail">
+            <div class="dna-detail-inner">
+              <h5>광고주 검색·매칭</h5>
+              <p>광고주가 CLYNK 플랫폼에서 업종·예산·기간·이미지 키워드 기반으로 모델을 검색합니다. 적합한 모델 발견 시 제안서를 발송합니다. <strong>이때 모델 본인의 사진·연락처는 절대 노출되지 않으며,</strong> 등록된 프로필 정보(활동명·대표작·티어·가용 업종)만 보입니다.</p>
+
+              <h5>제안서 구성</h5>
+              <ul>
+                <li><strong>광고주 정보</strong> — 회사명·브랜드·담당자</li>
+                <li><strong>캠페인 컨셉·집행 매체</strong> (지면·온라인·OOH 등)</li>
+                <li><strong>업종·계약 기간</strong> (1·3·6·12개월)</li>
+                <li><strong>총 금액</strong> = 월 구독료 + 업종 독점 프리미엄</li>
+                <li><strong>제작 패키지</strong> 선택 (Quick~Premium 또는 미선택)</li>
+              </ul>
+
+              <h5>모델 응답</h5>
+              <p><strong>수락 / 거절 / 협의</strong> 중 선택. 거절 시 사유 (스케줄·브랜드 부적합·금액·업종·기타) 선택 — 향후 매칭 정확도 개선에 사용됩니다. 협의는 금액·기간·조건 수정 제안이 가능합니다.</p>
+
+              <h5>소속사 최종 승인</h5>
+              <p>모델 수락 후 24시간 내 소속사가 검토 → 최종 승인. 승인 직후 광고주 결제 단계 진입.
+              <strong>결제 완료 즉시 업종 독점 자동 발동, KDDC 사용권 활성화됩니다.</strong></p>
+            </div>
+          </div>
+        </details>
+      </li>
+
+      <!-- STEP 5 -->
+      <li class="dna-step">
+        <details>
+          <summary>
+            <div class="num-bubble">5</div>
+            <div>
+              <h4>AI 제작 · 검수 · 납품 · 매월 정산</h4>
+              <p>양측 승인 즉시 AI 제작 시작 (24시간 내). 초안 검토 → 수정 → 최종 납품. 광고 집행 후 매월 정산 (광고주 → CLYNK → 소속사).</p>
+              <div class="meta-row">
+                <span class="badge badge-green">매월 정산</span>
+                <span class="badge badge-green">제작비 10% 사용료</span>
+              </div>
+            </div>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="dna-detail">
+            <div class="dna-detail-inner">
+              <h5>제작 흐름 (양측 승인 후 24시간 내 착수)</h5>
+              <ol>
+                <li><strong>광고주 브리프 접수</strong> → CLYNK 기획안 작성 (1~2일)</li>
+                <li><strong>기획안 양측 승인</strong> — 모델·소속사 수정 요청 가능 (이 단계에서도 거절 권한 유지)</li>
+                <li><strong>AI 제작</strong> — 이미지·영상 생성 (패키지에 따라 3~10일)</li>
+                <li><strong>초안 양측 검토</strong> — 수정 횟수 보장 (Quick 1회 / Standard 2회 / Pro 3회 / Premium 5회)</li>
+                <li><strong>최종 납품</strong> + CLYNK Verified 배지 표시</li>
+              </ol>
+
+              <h5>정산 구성 (모델·소속사 수령)</h5>
+              <ul>
+                <li><strong>월 구독료 분배분</strong> — 광고주 납부 전액에서 CLYNK 중개 수수료 차감 후, 소속사 ↔ 모델 협의 비율로 분배</li>
+                <li><strong>업종 독점 프리미엄</strong> — 구독료의 8~30% (Tier 1·2·3에 따라)</li>
+              </ul>
+
+              <h5>정산 시점·방식</h5>
+              <p><strong>매월</strong> (영업일 기준) 자동 입금. 세금계산서 자동 발행 — 소속사 사업자 정보 기준. 소속사 ↔ 모델 분배 비율은 별도 협의 사항입니다.</p>
+
+              <h5>갱신·만료</h5>
+              <p>계약 만료 <strong>45일 전 자동 알림</strong> 발송. 갱신 의사 시 재계약 협상, 미갱신 시 만료일에 사용권·업종 독점 자동 종료. <em>만료 후 30일 내 데이터 삭제 요청 가능.</em></p>
+            </div>
+          </div>
+        </details>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ SECTION 5: BRAND SAFETY ============ -->
+<section id="safety" class="bg-soft">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow"><span class="dot"></span>05. Brand Safety</span>
+      <h2 class="h-section">내 얼굴은, 내가 허락한 곳에서만.</h2>
+      <p class="body-lg">
+        이미지는 넓게 활용될 수 있어야 합니다. 하지만 통제 없이 확장되어서는 안 됩니다.
+        CLYNK는 6단계 통제 장치로 소속사·연예인의 권한을 기술과 정책으로 함께 지킵니다.
+      </p>
+    </div>
+
+    <div class="safety-grid">
+      <div class="safety-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div>
+        <h4>금지 업종 설정</h4>
+        <p>광고하지 않을 업종을 사전 차단. 해당 업종 제안은 검색·제안 단계에서 차단되어 도착하지 않습니다.</p>
+      </div>
+      <div class="safety-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg></div>
+        <h4>사전 승인 (양측 필수)</h4>
+        <p>모든 제안은 모델 수락 + 소속사 최종 승인 후 진행. CLYNK가 임의로 진행하는 광고는 없습니다.</p>
+      </div>
+      <div class="safety-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <h4>기획안 검토 (제작 전)</h4>
+        <p>AI 제작 시작 전, 컨셉·카피·구도 기획안 검토 권한. 이미지에 맞지 않으면 이 단계에서 중단합니다.</p>
+      </div>
+      <div class="safety-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h4>품질 검수 (납품 전)</h4>
+        <p>최종 결과물 납품 전 CLYNK 품질팀 + 양측 확인. 합격 후에만 광고 집행. 불합격 시 수정·재작업.</p>
+      </div>
+      <div class="safety-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <h4>계약 범위 명시</h4>
+        <p>업종·기간·매체·지역까지 CLYNK 표준 계약서로 명문화. 범위 외 사용은 분쟁 사유, 3영업일 내 판정.</p>
+      </div>
+      <div class="safety-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12a9 9 0 109-9M3 12a9 9 0 019 9M3 12h18"/></svg></div>
+        <h4>자동 만료</h4>
+        <p>계약 만료 즉시 사용권 종료, 업종 독점도 자동 해제. 갱신은 다시 양측 승인이 있어야만 가능.</p>
+      </div>
+    </div>
+
+    <div class="industry-grid">
+      <h4>업종 대분류 16개 (독점 발동 단위)</h4>
+      <ul class="industry-list">
+        <li>식품·음료</li>
+        <li>건강기능식품·의약품</li>
+        <li>뷰티·화장품</li>
+        <li>패션·의류·잡화</li>
+        <li>의료·헬스케어</li>
+        <li>금융·보험</li>
+        <li>IT·전자·통신</li>
+        <li>자동차·모빌리티</li>
+        <li>부동산·인테리어</li>
+        <li>교육</li>
+        <li>여행·숙박·레저</li>
+        <li>유통·이커머스·프랜차이즈</li>
+        <li>반려동물</li>
+        <li>스포츠·피트니스</li>
+        <li>공공·사회·기관</li>
+        <li>기타·신규 (CLYNK 심의)</li>
+      </ul>
+    </div>
+
+    <div class="not-covered">
+      <h4>CLYNK가 취급하지 않는 광고</h4>
+      <ul>
+        <li>· 정치·선거</li>
+        <li>· 도박·사행성</li>
+        <li>· 성인 콘텐츠</li>
+        <li>· 담배·전자담배 (금연 캠페인 예외)</li>
+        <li>· 과장 의료광고</li>
+        <li>· 투기성 금융</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 6: REVENUE STRUCTURE ============ -->
+<section id="revenue">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow"><span class="dot"></span>06. 수익 구조</span>
+      <h2 class="h-section">한 번이 아니라, 이어지는 수익.</h2>
+      <p class="body-lg">
+        광고주는 매월 모델 구독료를 CLYNK에 납부합니다. CLYNK는 매월 소속사에 정산하고,
+        소속사가 모델과의 협의 비율로 분배합니다.
+      </p>
+    </div>
+
+    <div class="pricing-set">
+      <div class="pricing-card">
+        <h4>신인·신예 모델 <span class="caption" style="font-weight:500;opacity:0.6">(예시)</span></h4>
+        <p class="pricing-note">월 단가 (광고주 납부 기준, 단위: 만원)</p>
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>계약 기간</th>
+              <th style="text-align:right">월 단가</th>
+              <th style="text-align:right">총액</th>
+              <th style="text-align:right">절감률</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1개월</td><td class="num">700</td><td class="num dim">700</td><td class="num dim">—</td></tr>
+            <tr class="highlight"><td>3개월 <span class="badge badge-blue" style="margin-left:6px">추천</span></td><td class="num">600</td><td class="num">1,800</td><td class="num dim">14%</td></tr>
+            <tr><td>6개월</td><td class="num">500</td><td class="num dim">3,000</td><td class="num dim">29%</td></tr>
+            <tr><td>12개월</td><td class="num">420</td><td class="num dim">5,040</td><td class="num dim">40%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pricing-card">
+        <h4>중견급 모델 <span class="caption" style="font-weight:500;opacity:0.6">(예시)</span></h4>
+        <p class="pricing-note">월 단가 (광고주 납부 기준, 단위: 만원)</p>
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>계약 기간</th>
+              <th style="text-align:right">월 단가</th>
+              <th style="text-align:right">총액</th>
+              <th style="text-align:right">절감률</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1개월</td><td class="num">1,500</td><td class="num dim">1,500</td><td class="num dim">—</td></tr>
+            <tr class="highlight"><td>3개월 <span class="badge badge-blue" style="margin-left:6px">추천</span></td><td class="num">1,300</td><td class="num">3,900</td><td class="num dim">13%</td></tr>
+            <tr><td>6개월</td><td class="num">1,100</td><td class="num dim">6,600</td><td class="num dim">27%</td></tr>
+            <tr><td>12개월</td><td class="num">900</td><td class="num dim">10,800</td><td class="num dim">40%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="caption" style="margin-top: var(--space-6);">톱 티어 모델은 별도 견적. 위 금액은 광고주 납부 기준이며, CLYNK 중개 수수료 차감 후 소속사 정산. 소속사 ↔ 모델 분배 비율은 별도 협의.</p>
+
+    <!-- INDUSTRY EXCLUSIVITY TIERS -->
+    <div style="margin-top: var(--space-20);">
+      <h3 class="h-sub" style="margin-bottom: var(--space-4);">업종 독점 프리미엄 (3티어)</h3>
+      <p class="body">
+        구독료에 더해, 업종 독점 보호의 강도에 따라 추가 프리미엄이 붙습니다. 경쟁이 치열한 업종일수록 프리미엄이 높고,
+        그 금액 역시 모델·소속사의 정산 base에 반영됩니다.
+      </p>
+
+      <div class="tier-grid">
+        <div class="tier-card">
+          <h5>Tier 1 — 고경쟁</h5>
+          <div class="premium">+25~30%</div>
+          <p class="examples"><strong>뷰티·화장품, 건강기능식품, 치킨·피자, 금융·보험, 패션·의류</strong></p>
+        </div>
+        <div class="tier-card">
+          <h5>Tier 2 — 중경쟁</h5>
+          <div class="premium">+15~20%</div>
+          <p class="examples"><strong>교육, 유통·이커머스, 여행·숙박, IT·통신, 자동차</strong></p>
+        </div>
+        <div class="tier-card">
+          <h5>Tier 3 — 저경쟁</h5>
+          <div class="premium">+8~12%</div>
+          <p class="examples"><strong>공공·기관, 지역행사, B2B, 반려동물</strong></p>
+        </div>
+      </div>
+
+      <p class="caption" style="margin-top: var(--space-6);">복수 업종 추가 시: 2번째 +60%, 3번째 +50%, 4개+ 협의. 6개월 이상 선납 락인 시 일부 할인 + AI 제작 크레딧 + 갱신 우선권.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 7: AI PRODUCTION PACKAGES ============ -->
+<section id="packages" class="bg-soft">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow"><span class="dot"></span>07. AI 제작 패키지</span>
+      <h2 class="h-section">촬영 없이, 24시간 내에.</h2>
+      <p class="body-lg">
+        양측 컨펌 즉시 제작 시작.
+      </p>
+    </div>
+
+    <div class="ai-table">
+      <table>
+        <thead>
+          <tr>
+            <th>패키지</th>
+            <th>가격</th>
+            <th>포함 내용</th>
+            <th>납품</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="pkg-name">AI Quick</td>
+            <td class="pkg-price">150만원</td>
+            <td>이미지 5종 + 15초 영상 1편</td>
+            <td class="pkg-time">3~4일</td>
+          </tr>
+          <tr class="featured">
+            <td class="pkg-name">AI Standard <span class="badge badge-green" style="margin-left:6px">추천</span></td>
+            <td class="pkg-price">300만원</td>
+            <td>이미지 10종 + 15초 2편 + 30초 1편</td>
+            <td class="pkg-time">5~6일</td>
+          </tr>
+          <tr>
+            <td class="pkg-name">AI Professional</td>
+            <td class="pkg-price">500만원</td>
+            <td>이미지 20종 + 15초 3편 + 30초 2편 + 범퍼</td>
+            <td class="pkg-time">7일</td>
+          </tr>
+          <tr>
+            <td class="pkg-name">AI Premium</td>
+            <td class="pkg-price">800만원</td>
+            <td>이미지 30종+ + 영상 풀세트 (6초~60초)</td>
+            <td class="pkg-time">10일</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="caption" style="margin-top: var(--space-6);">레거시 광고 제작 대비 60~80% 비용 절감. 패키지별 수정 횟수: Quick 1회 / Standard 2회 / Professional 3회 / Premium 5회. 추가 수정은 패키지 가격의 12%/회.</p>
+  </div>
+</section>
+
+<!-- ============ SECTION 8: COMPARISON ============ -->
+<section id="compare">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow"><span class="dot"></span>08. 비교</span>
+      <h2 class="h-section">기존 방식 vs CLYNK.</h2>
+      <p class="body-lg">
+        같은 광고 한 편을 만들 때, 기존 방식과 CLYNK가 어떻게 다른지. 시간·비용·통제·반복 가능성 모두 다릅니다.
+      </p>
+    </div>
+
+    <div class="compare-table">
+      <table>
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>기존 방식</th>
+            <th class="is-clynk">CLYNK</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>계약~제작 착수</td>
+            <td>2~4주 (협의·일정·현장)</td>
+            <td class="is-clynk"><strong>24시간</strong> (양측 컨펌 즉시)</td>
+          </tr>
+          <tr>
+            <td>제작 완료</td>
+            <td>2~3개월</td>
+            <td class="is-clynk"><strong>3~10일</strong> (패키지에 따라)</td>
+          </tr>
+          <tr>
+            <td>제작 비용</td>
+            <td>1편당 1,000~8,000만원</td>
+            <td class="is-clynk"><strong>150~800만원</strong> (60~80% 절감)</td>
+          </tr>
+          <tr>
+            <td>모델 시간 부담</td>
+            <td>매번 촬영 (각 1~3일)</td>
+            <td class="is-clynk"><strong>1회 90분 세션 + 검토만</strong></td>
+          </tr>
+          <tr>
+            <td>업종 독점</td>
+            <td>계약서 명시·수동 관리</td>
+            <td class="is-clynk"><strong>계약 즉시 자동 발동·만료</strong></td>
+          </tr>
+          <tr>
+            <td>반복 활용</td>
+            <td>매번 처음부터 다시</td>
+            <td class="is-clynk"><strong>한 번의 자산 → 무제한 광고</strong></td>
+          </tr>
+          <tr>
+            <td>이미지 통제</td>
+            <td>사후 대응 (분쟁 시)</td>
+            <td class="is-clynk"><strong>6단계 사전 통제 + 자동 만료</strong></td>
+          </tr>
+          <tr>
+            <td>정산 투명성</td>
+            <td>복잡한 중개 수수료 누적</td>
+            <td class="is-clynk"><strong>표준 정산서 + 매월</strong></td>
+          </tr>
+          <tr>
+            <td>새 광고주 발견</td>
+            <td>매니저 개별 영업</td>
+            <td class="is-clynk"><strong>플랫폼 내 자동 매칭</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 9: PROCESS TIMELINE ============ -->
+<section id="flow" class="bg-soft">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow"><span class="dot"></span>09. 흐름</span>
+      <h2 class="h-section">가입부터 첫 정산까지.</h2>
+      <p class="body-lg">
+        모델·소속사 입장에서 직접 해야 하는 일은 <strong>준비·설정·승인</strong> 세 가지입니다.
+        그 외의 연결·계약·검수·집행·정산은 하나의 흐름으로 이어집니다.
+      </p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-step complete">
+        <h4>Day 0 — KDDC 문의 <span class="badge badge-blue">5분</span></h4>
+        <p>웹에서 문의 폼 작성 (이름·소속사·연락처·희망일). 평일 일정 협의 후 확정 알림.</p>
+      </div>
+      <div class="timeline-step complete">
+        <h4>Day 1~7 — Digital DNA 세션 <span class="badge badge-blue">90분</span></h4>
+        <p>KDDC 점 방문, 본인 인증·동의서, Esper LightCage 상반신·얼굴 3D 스캔과 음성·표정 캡처까지. 한 번이면 끝.</p>
+      </div>
+      <div class="timeline-step complete">
+        <h4>Day 7 — 프로필 등록 + 업종 설정 <span class="badge badge-blue">30분</span></h4>
+        <p>CLYNK 모델 페이지 활성화. 선호·금지 업종, 가격 티어 (소속사와 협의), 일정 가용성 설정.</p>
+      </div>
+      <div class="timeline-step">
+        <h4>Day 7+ — 광고주 매칭 시작 <span class="badge badge-neutral">대기</span></h4>
+        <p>광고주가 CLYNK 검색에서 발견 → 적합도 확인 → 제안 발송. 모델·소속사 알림.</p>
+      </div>
+      <div class="timeline-step">
+        <h4>제안 도착 — 검토 + 양측 승인 <span class="badge badge-neutral">평균 2~3일</span></h4>
+        <p>제안 상세 (업종·기간·금액·기획안 컨셉) 확인 → 수락 / 거절 / 협의 → 소속사 최종 승인 → 결제 완료 → 업종 독점 즉시 발동.</p>
+      </div>
+      <div class="timeline-step">
+        <h4>제작 단계 — 24h 착수, 3~10일 완성 <span class="badge badge-green">AI</span></h4>
+        <p>기획안 검토 (모델·소속사 승인) → AI 제작 → 초안 검토 → 수정 → 최종 납품. 모델은 검토만 합니다.</p>
+      </div>
+      <div class="timeline-step">
+        <h4>광고 집행 — CLYNK Verified <span class="badge badge-blue">집행 중</span></h4>
+        <p>광고주가 매체 집행. CLYNK Verified 배지로 모델·플랫폼 검증 표시. 갱신 알림 45일 전 자동 발송.</p>
+      </div>
+      <div class="timeline-step">
+        <h4>매월 — 정산 입금</h4>
+        <p>광고주 결제 → CLYNK 수령 → 매월 소속사 정산 (구독료 + 독점 프리미엄). 표준 정산서 + 세금계산서 자동 발행.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 10: FAQ ============ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow"><span class="dot"></span>10. FAQ</span>
+      <h2 class="h-section">자주 묻는 질문.</h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Digital DNA 촬영 후, 내가 직접 광고 촬영을 해야 하나요?</summary>
+        <div class="faq-body">
+          <strong>아니요.</strong> Digital DNA 촬영(약 90분 1회)이 끝나면, 이후 모든 광고는 AI로 제작됩니다.
+          모델은 기획안과 결과물을 검토하는 역할만 수행합니다. 단, 본인이 원하면 일부 광고는 직접 촬영을 병행할 수 있습니다 (개별 협의).
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>내 이미지가 어디 어떻게 쓰이는지 어떻게 통제하나요?</summary>
+        <div class="faq-body">
+          <strong>6단계 안전 장치로 통제합니다.</strong> ① 금지 업종 사전 차단 ② 모든 제안에 양측 승인 필수
+          ③ 기획안 검토 단계에서 거부 권한 ④ 최종 결과물 품질 검수 ⑤ 표준 계약서로 업종·기간·매체·지역 명문화
+          ⑥ 계약 만료 즉시 사용권 자동 종료. 또한 분쟁 발생 시 3영업일 내 CLYNK 심의 판정.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>특정 업종 광고는 절대 안 하고 싶은데, 막을 수 있나요?</summary>
+        <div class="faq-body">
+          <strong>네, 가능합니다.</strong> 프로필에 "제외 업종"을 명시하면, 해당 업종의 광고주는 검색·제안 단계에서 모델을 발견할 수 없습니다.
+          제안 자체가 도착하지 않으므로 매번 거절할 필요도 없습니다. 16개 대분류 + 세부 카테고리 단위로 설정 가능합니다.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>정산은 언제, 어떻게 받나요?</summary>
+        <div class="faq-body">
+          <strong>매월</strong> 소속사로 정산됩니다. 정산 항목은
+          ① 모델 구독료 (광고주 납부 - CLYNK 수수료)
+          ② 업종 독점 프리미엄 (구독료의 8~30%)으로 구성됩니다.
+          소속사 ↔ 모델 분배 비율은 별도 협의 사항입니다.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>계약이 끝나면 내 디지털 자산은 어떻게 되나요?</summary>
+        <div class="faq-body">
+          <strong>계약 만료 즉시 사용권이 자동 종료됩니다.</strong> 갱신을 원하지 않으면 데이터 삭제 요청도 가능합니다 (요청 후 30일 내 완전 삭제, 백업 포함).
+          갱신 시에는 다시 양측 승인이 있어야만 사용권이 재발효됩니다. KDDC는 자산을 보관하지만, 사용은 활성 계약 기간에만 가능합니다.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>전통적인 광고·드라마 출연 활동을 병행할 수 있나요?</summary>
+        <div class="faq-body">
+          <strong>전혀 영향 없습니다.</strong> CLYNK는 디지털 자산 기반 광고 사업의 추가 채널입니다.
+          기존 매니지먼트 활동(드라마·영화·CF·예능·콘서트 등)은 그대로 유지하면서, CLYNK는 추가 수익원으로 작동합니다.
+          단, 같은 업종에서 직접 광고와 CLYNK 광고가 충돌할 수 있으니 소속사와 사전 조율 필요합니다.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>소속사 없이 개인이 가입할 수 있나요?</summary>
+        <div class="faq-body">
+          현재 CLYNK는 KDDC 등록 소속사를 통한 가입을 우선으로 합니다.
+          개인 가입 (소속사 없음)은 별도 심사 후 가능하며, 정산·법적 보호·표준 계약서 처리 절차가 다소 다릅니다.
+          무소속 모델도 KDDC 문의 후 협의 진행 가능합니다.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>분쟁이 생기면 어떻게 처리되나요?</summary>
+        <div class="faq-body">
+          <strong>3영업일 내 CLYNK 심의 판정.</strong> 업종 독점 충돌, 계약 범위 외 사용, 결제 지연, 결과물 품질 등의 분쟁은
+          분쟁 접수 → 양측 의견 수렴 → 3영업일 내 판정 → 결과 통보의 절차로 처리됩니다.
+          판정 결과에 따라 환불·재제작·계약 조정·법적 절차 안내가 진행됩니다.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Digital DNA 데이터는 어디에 저장되나요? 보안은?</summary>
+        <div class="faq-body">
+          Digital DNA 원본 데이터는 KDDC 내부 전용 DAS에만 저장되며, 외부 네트워크와 분리된 오프라인 환경에서 보호됩니다.
+          어떤 원본 데이터도 온라인 클라우드에 업로드되지 않으며, 승인된 내부 권한자만 제한적으로 접근할 수 있습니다.
+          KDDC는 원본 데이터가 외부로 노출되지 않도록 설계된 폐쇄형 보안 체계 안에서 이를 엄격히 관리합니다.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 11: FINAL CTA ============ -->
+<section id="start" class="final-cta">
+  <div class="container">
+    <svg class="final-cta-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+    <span class="badge badge-blue" style="margin-bottom: var(--space-6);">Let's CLYNK</span>
+    <h2 class="h-display">준비된 쪽이<br/>더 많은 기회를 얻습니다.</h2>
+    <p class="body-lg">
+      Digital DNA 촬영은 한 번이면 됩니다. 이후의 흐름은 CLYNK가 잇겠습니다.
+      KDDC 문의 후 약 90분 1회 세션 진행, 평일 가능합니다.
+    </p>
+
+    <div class="final-cta-actions">
+      <a class="btn btn-primary btn-lg" href="mailto:james@digitaldna.kr?subject=KDDC%20%EB%AC%B8%EC%9D%98" target="_blank" rel="noopener">
+        KDDC 문의하기
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <div class="final-cta-meta">
+        <span class="dot"></span>
+        <span>1회 세션 · 평일 가능 · 약 90분</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg class="word" viewBox="0 0 626.23 151.41" aria-hidden="true"><use href="#logo-word"/></svg>
+        <p>K-셀럽을 위한 AI 광고 플랫폼. 한 번의 디지털 DNA 캡처로 광고 기회를 반복 수익으로 잇습니다.</p>
+      </div>
+      <div class="footer-col">
+        <h5>플랫폼</h5>
+        <ul>
+          <li><a href="#solution">CLYNK 소개</a></li>
+          <li><a href="#dna">Digital DNA</a></li>
+          <li><a href="#safety">Brand Safety</a></li>
+          <li><a href="#revenue">수익 구조</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>회사</h5>
+        <ul>
+          <li><a href="#">July House Group</a></li>
+          <li><a href="#">KDDC 파트너십</a></li>
+          <li><a href="#">Arkain AI Tool</a></li>
+          <li><a href="#">미디어 키트</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>연락</h5>
+        <ul>
+          <li><a href="mailto:james@digitaldna.kr">james@digitaldna.kr</a></li>
+          <li><a href="#start">KDDC 문의</a></li>
+          <li><a href="#">소속사 가입 문의</a></li>
+          <li><a href="#">광고주 가입 문의</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 July House Group. All rights reserved.</span>
+      <span>· 이용약관 · 개인정보처리방침 · 사업자정보</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  // Active nav highlight on scroll
+  const sections = document.querySelectorAll('main section[id]');
+  const navLinks = document.querySelectorAll('.nav a[href^="#"]');
+  const navMap = new Map();
+  navLinks.forEach(a => {
+    const id = a.getAttribute('href').slice(1);
+    if (id) navMap.set(id, a);
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const link = navMap.get(entry.target.id);
+      if (!link) return;
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+  sections.forEach(s => observer.observe(s));
+
+  // Smooth scroll polyfill not needed — html { scroll-behavior: smooth }
+  // But account for sticky header height when jumping
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const id = link.getAttribute('href').slice(1);
+      if (!id) return;
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.scrollY - 64;
+      window.scrollTo({ top, behavior: 'smooth' });
+      history.replaceState(null, '', '#' + id);
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
